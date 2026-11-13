@@ -1,0 +1,78 @@
+{
+  "tab_id": "vp_addresses",
+  "tab_title": "VP Addresses",
+  "description": "Configure and generate Virtual Port (VP) memory address allocations and register maps.",
+  "version": "1.0",
+  "fields": [
+    {
+      "id": "source_columns",
+      "label": "Select Source Columns",
+      "type": "checkbox_group",
+      "options": [
+        "address_hex",
+        "address_dec",
+        "variable_name",
+        "data_type",
+        "access_mode",
+        "default_value",
+        "description"
+      ],
+      "default": [
+        "address_hex",
+        "address_dec",
+        "variable_name",
+        "data_type",
+        "access_mode"
+      ],
+      "help": "Columns included in each address record."
+    },
+    {
+      "id": "num_records",
+      "label": "Number of Records",
+      "type": "number",
+      "min": 1,
+      "max": 500,
+      "default": 8,
+      "help": "Total sequential VP address records to allocate."
+    },
+    {
+      "id": "starting_vp_address",
+      "label": "Starting VP Address (Hex or Dec)",
+      "type": "text",
+      "default": "0x1000",
+      "help": "Base memory address e.g. 0x1000 or 4096."
+    },
+    {
+      "id": "address_increment",
+      "label": "Define Address Increment",
+      "type": "number",
+      "min": 1,
+      "max": 16,
+      "default": 2,
+      "help": "Offset step between addresses (2 for 16-bit word, 4 for 32-bit dword)."
+    },
+    {
+      "id": "data_type",
+      "label": "Select Data Type",
+      "type": "select",
+      "options": ["UINT16", "INT16", "UINT32", "INT32", "FLOAT32", "STRING", "BOOLEAN"],
+      "default": "UINT16",
+      "help": "Default binary data representation."
+    },
+    {
+      "id": "access_mode",
+      "label": "Access Permission",
+      "type": "select",
+      "options": ["Read / Write", "Read Only", "Write Only"],
+      "default": "Read / Write"
+    },
+    {
+      "id": "variable_prefix",
+      "label": "Configure Variable Prefix",
+      "type": "text",
+      "default": "VP_ADDR_",
+      "help": "Base prefix for auto-generating register variable names."
+    }
+  ],
+  "generator_type": "vp_addresses"
+}

@@ -1,0 +1,31 @@
+{
+  "tab_id": "features",
+  "tab_title": "Features",
+  "description": "Configure feature toggles, firmware capabilities, and functional modules.",
+  "version": "1.0",
+  "fields": [
+    {
+      "id": "source_columns",
+      "label": "Select Source Columns",
+      "type": "checkbox_group",
+      "options": ["feature_id", "name", "category", "enabled", "beta_flag", "license_tier", "description"],
+      "default": ["feature_id", "name", "category", "enabled", "license_tier"]
+    },
+    {
+      "id": "num_records",
+      "label": "Number of Features",
+      "type": "number",
+      "min": 1,
+      "max": 50,
+      "default": 6
+    },
+    {
+      "id": "default_state",
+      "label": "Default Toggle State",
+      "type": "select",
+      "options": ["Enabled (true)", "Disabled (false)", "Dynamic Rule"],
+      "default": "Enabled (true)"
+    }
+  ],
+  "generator_type": "features"
+}

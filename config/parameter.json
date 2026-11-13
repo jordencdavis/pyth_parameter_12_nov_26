@@ -1,0 +1,34 @@
+{
+  "tab_id": "parameter",
+  "tab_title": "Parameter",
+  "description": "Dynamic data generator schema for parameter",
+  "version": "1.0",
+  "fields": [
+    {
+      "id": "source_columns",
+      "label": "Source Columns",
+      "type": "checkbox_group",
+      "options": [
+        "id",
+        "name",
+        "value",
+        "status",
+        "timestamp"
+      ],
+      "default": [
+        "id",
+        "name",
+        "value"
+      ]
+    },
+    {
+      "id": "num_records",
+      "label": "Number of Records",
+      "type": "number",
+      "min": 1,
+      "max": 100,
+      "default": 5
+    }
+  ],
+  "generator_type": "generic"
+}

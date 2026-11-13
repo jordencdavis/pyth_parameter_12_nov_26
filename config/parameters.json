@@ -1,0 +1,63 @@
+{
+  "tab_id": "parameters",
+  "tab_title": "Parameters",
+  "description": "Configure system setpoints, operational limits, calibration constants, and tuning parameters.",
+  "version": "1.0",
+  "fields": [
+    {
+      "id": "source_columns",
+      "label": "Select Source Columns",
+      "type": "checkbox_group",
+      "options": [
+        "param_id",
+        "name",
+        "group",
+        "data_type",
+        "default_value",
+        "min_limit",
+        "max_limit",
+        "unit",
+        "read_only"
+      ],
+      "default": [
+        "param_id",
+        "name",
+        "group",
+        "data_type",
+        "default_value",
+        "min_limit",
+        "max_limit",
+        "unit"
+      ]
+    },
+    {
+      "id": "num_records",
+      "label": "Number of Parameters",
+      "type": "number",
+      "min": 1,
+      "max": 100,
+      "default": 8
+    },
+    {
+      "id": "parameter_group",
+      "label": "Parameter Group",
+      "type": "select",
+      "options": ["Motor Control", "PID Loop Tuning", "Thermal Management", "Safety Interlocks", "Network Setup"],
+      "default": "PID Loop Tuning"
+    },
+    {
+      "id": "unit_family",
+      "label": "Unit Family",
+      "type": "select",
+      "options": ["RPM", "Celsius (°C)", "Volts (V)", "Amperes (A)", "Bar / PSI", "Milliseconds (ms)", "Percentage (%)"],
+      "default": "Percentage (%)"
+    },
+    {
+      "id": "prefix",
+      "label": "Parameter Key Prefix",
+      "type": "text",
+      "default": "PARAM_CFG_"
+    }
+  ],
+  "generator_type": "parameters"
+}

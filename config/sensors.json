@@ -1,0 +1,66 @@
+{
+  "tab_id": "sensors",
+  "tab_title": "Sensors",
+  "description": "Configure sensor telemetry profiles, channels, sampling rates, and thresholds.",
+  "version": "1.0",
+  "fields": [
+    {
+      "id": "source_columns",
+      "label": "Select Source Columns",
+      "type": "checkbox_group",
+      "options": [
+        "sensor_id",
+        "sensor_name",
+        "sensor_type",
+        "pin_channel",
+        "unit",
+        "sampling_rate_ms",
+        "min_threshold",
+        "max_threshold",
+        "status"
+      ],
+      "default": [
+        "sensor_id",
+        "sensor_name",
+        "sensor_type",
+        "unit",
+        "sampling_rate_ms",
+        "status"
+      ],
+      "help": "Sensor metadata attributes to generate."
+    },
+    {
+      "id": "num_records",
+      "label": "Specify Number of Records",
+      "type": "number",
+      "min": 1,
+      "max": 100,
+      "default": 6,
+      "help": "Number of sensor channels to generate."
+    },
+    {
+      "id": "sensor_category",
+      "label": "Sensor Category",
+      "type": "select",
+      "options": ["Environmental", "Industrial Vibration", "Thermal", "Flow / Pressure", "Electrical Current"],
+      "default": "Environmental"
+    },
+    {
+      "id": "sampling_rate_ms",
+      "label": "Default Sampling Rate (ms)",
+      "type": "number",
+      "min": 10,
+      "max": 60000,
+      "default": 1000,
+      "help": "Acquisition interval in milliseconds."
+    },
+    {
+      "id": "location_zone",
+      "label": "Installation Zone / Area",
+      "type": "text",
+      "default": "Zone-A-Floor-1",
+      "help": "Physical location tag for telemetry."
+    }
+  ],
+  "generator_type": "sensors"
+}

@@ -1,0 +1,96 @@
+{
+  "tab_id": "communication",
+  "tab_title": "Communication",
+  "description": "Configure fieldbus protocols, network socket endpoints, baud rates, and timeout rules.",
+  "version": "1.0",
+  "fields": [
+    {
+      "id": "source_columns",
+      "label": "Select Source Columns",
+      "type": "checkbox_group",
+      "options": [
+        "interface_id",
+        "protocol",
+        "endpoint",
+        "port_baud",
+        "timeout_ms",
+        "retry_limit",
+        "status",
+        "keepalive_sec"
+      ],
+      "default": [
+        "interface_id",
+        "protocol",
+        "endpoint",
+        "port_baud",
+        "timeout_ms",
+        "retry_limit"
+      ]
+    },
+    {
+      "id": "protocol_type",
+      "label": "Industrial Protocol",
+      "type": "select",
+      "options": [
+        "Modbus TCP/IP",
+        "Modbus RTU (RS485)",
+        "EtherNet/IP CIP",
+        "PROFINET",
+        "CANopen",
+        "WebSocket / HTTP REST"
+      ],
+      "default": "Modbus TCP/IP"
+    },
+    {
+      "id": "protocol_type",
+      "label": "Industrial Protocol",
+      "type": "select",
+      "options": [
+        "Modbus TCP/IP",
+        "Modbus RTU (RS485)",
+        "EtherNet/IP CIP",
+        "PROFINET",
+        "CANopen",
+        "WebSocket / HTTP REST"
+      ],
+      "default": "Modbus TCP/IP"
+    },
+    {
+      "id": "target_host",
+      "label": "Target Host / IP Address",
+      "type": "text",
+      "default": "192.168.1.100"
+    },
+    {
+      "id": "target_port",
+      "label": "Port / Baudrate",
+      "type": "text",
+      "default": "502"
+    },
+    {
+      "id": "timeout_ms",
+      "label": "Socket Timeout (ms)",
+      "type": "number",
+      "min": 100,
+      "max": 10000,
+      "default": 1500
+    },
+    {
+      "id": "retry_limit",
+      "label": "Retry Count",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "default": 3
+    },
+    {
+      "id": "num_records",
+      "label": "Number of Endpoints",
+      "type": "number",
+      "min": 1,
+      "max": 20,
+      "default": 4
+    }
+  ],
+  "generator_type": "communication"
+}

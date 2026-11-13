@@ -1,0 +1,66 @@
+{
+  "tab_id": "topics",
+  "tab_title": "Topics",
+  "description": "Configure pub/sub message brokers, topic namespaces, QoS tiers, and payload formats.",
+  "version": "1.0",
+  "fields": [
+    {
+      "id": "source_columns",
+      "label": "Select Source Columns",
+      "type": "checkbox_group",
+      "options": [
+        "topic_name",
+        "direction",
+        "qos",
+        "retained",
+        "payload_type",
+        "description",
+        "rate_hz"
+      ],
+      "default": [
+        "topic_name",
+        "direction",
+        "qos",
+        "retained",
+        "payload_type",
+        "description"
+      ]
+    },
+    {
+      "id": "broker_protocol",
+      "label": "Broker Protocol",
+      "type": "select",
+      "options": ["MQTT (v3.1.1/v5.0)", "Apache Kafka", "ROS 2 DDS", "WebSocket PubSub", "ZeroMQ"],
+      "default": "MQTT (v3.1.1/v5.0)"
+    },
+    {
+      "id": "root_namespace",
+      "label": "Root Topic Namespace",
+      "type": "text",
+      "default": "devices/station_01/subsystem"
+    },
+    {
+      "id": "qos_level",
+      "label": "Default QoS Tier",
+      "type": "select",
+      "options": ["0 - At most once", "1 - At least once", "2 - Exactly once"],
+      "default": "1 - At least once"
+    },
+    {
+      "id": "payload_format",
+      "label": "Serialization Format",
+      "type": "select",
+      "options": ["JSON UTF-8", "Protocol Buffers", "MessagePack", "Raw Binary", "Plain Text"],
+      "default": "JSON UTF-8"
+    },
+    {
+      "id": "num_records",
+      "label": "Number of Topic Channels",
+      "type": "number",
+      "min": 1,
+      "max": 50,
+      "default": 5
+    }
+  ],
+  "generator_type": "topics"
+}
